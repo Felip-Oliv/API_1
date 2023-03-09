@@ -1,0 +1,8 @@
+### Listar produtos
+GET http://localhost:3000/ HTTP/1.1
+
+### Cadastrar produto
+POST http://localhost:3000/ HTTP/1.1
+
+###
+PUT http://localhost:3000/ HTTP/1.1
