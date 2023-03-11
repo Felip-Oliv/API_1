@@ -24,7 +24,7 @@ app.post("/", (request, response)=>{
     status(201).
     json({
         message:"Produto cadastrado!",
-        data: produto
+        data: produto,
     });
 
 
@@ -33,7 +33,7 @@ app.post("/", (request, response)=>{
 
 
 app.listen(3000, ()=> {
-    console.log("testestsetsetsetsete");
+    console.log("Testestset");
    
 });
 
