@@ -1,9 +1,10 @@
-import express from 'express';
+import express from "express";
+import { Produto } from './models/produto.model';
 
 const app = express();
 app.use(express.json());
 
-const produtos = [];
+const produtos: Produto[]=[];
 
 
 app.get("/",(request, response)=> {
@@ -13,6 +14,7 @@ app.get("/",(request, response)=> {
         data: produtos
 
 });
+
 });
 
 app.post("/", (request, response)=>{
