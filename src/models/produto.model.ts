@@ -1,6 +1,4 @@
-export interface Produto {
-
+export interface Produto{
     nome: string;
     preco: number;
-    
 }
