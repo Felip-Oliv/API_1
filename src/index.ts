@@ -1,13 +1,13 @@
 import express from 'express';
-import { Produto } from './models/produto.model';
+import { router } from './config/routes';
 
 const app = express();
 
 app.use(express.json()); 
+app.use(router);
 
-const produtos : Produto[] = [];
 
-app.get("/", (request, response) => {
+/*app.get("/", (request, response) => {
     return response.
         status(200).
         json({
@@ -25,7 +25,7 @@ app.post("/", (request, response) => {
             message: "Produto cadastrado!",
             data: produto
         });
-});
+});*/
 
 app.listen(3000, () => {
     console.clear();
