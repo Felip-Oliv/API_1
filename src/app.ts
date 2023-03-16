@@ -12,7 +12,6 @@ app.get("/",(request, response)=> {
     status(200).
     json({massage: "Lista de produtos",
         data: produtos
-
 });
 
 });
