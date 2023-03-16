@@ -1,8 +1,18 @@
+import { Request, Response } from "express";
+import {Produto} from "../models/produto.model";
+
+const produtos : Produto[]  = []
 export class ProdutoController{
 
-    list(){
+    list(request: Request, response: Response){
         //Aqui vamos implementar a funcionalidade 
         //Listagem de produtos
+        return response.
+        status(200).
+        json({
+            message: "ok",
+            data: produtos,
+        });
         console.log("Listagem de produtos!");
 
     }
