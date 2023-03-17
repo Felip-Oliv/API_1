@@ -1,6 +1,5 @@
+import { Produto } from './../models/produto.model';
 import { Request, Response } from "express";
-import {Produto} from "../models/produto.model";
-
 const produtos : Produto[]  = []
 export class ProdutoController{
 
@@ -17,20 +16,30 @@ export class ProdutoController{
 
     }
 
-    find(){
+    find(request: Request, response: Response){
         //Aqui vamos implementar a funcionalidade 
         //Busca de produtos
-        console.log("Procurar de produtos!");
-
+        const {nome} = request.params;
+       const produto :  Produto = produtos.find(p => p.nome == nome)!;
+        return response.status(200).json({
+            massage: "OK",
+            data: produto,
+        });
     }
 
-    create(){
+    create(request: Request, response: Response){
         //Aqui vamos implementar a funcionalidade 
         //Criar de produtos
-        console.log("Criar de produtos!");
+        const produto = request.body;
+        produtos.push(produto);
+        return response.
+            status(201).
+            json({
+                message: "Produto cadastrado!",
+                data: produto
+            });}
 
 
-    }
     delete(){
         //Aqui vamos implementar a funcionalidade 
         //Deletar de produtos
